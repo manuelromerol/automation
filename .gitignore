@@ -7,8 +7,5 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 
-# Ignore lock file
-package-lock.json
-
 # Ignore IDE files
 .idea
