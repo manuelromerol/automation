@@ -1,4 +1,4 @@
-import { expect, Page } from "@playwright/test";
+import { Page } from "@playwright/test";
 import { HomePage } from "../pages/HomePage";
 
 export class HomeSteps {
@@ -12,8 +12,19 @@ export class HomeSteps {
 
     async navigateToHomePage() {
         await this.homePage.navigateToHomePage();
+    }
+
+    async getPageTitle(): Promise<string> {
         const title = await this.homePage.getPageTitle();
         console.log(`Title:${title}`);
-        expect(title).toContain("Playwright");
+        return title;
+    }
+
+    async searchBook(term: string) {
+        await this.homePage.searchBook(term);
+    }
+
+    async openFirstBookListed(): Promise<void> {
+        await this.homePage.openFirstBook();
     }
 }
